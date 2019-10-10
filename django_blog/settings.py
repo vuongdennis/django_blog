@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'fhd96uzmg$v&tq0)8=9m!o%v^o10_gj-iu!k&4q$(e%w2stc*9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://mydjangoblogproject.herokuapp.com/']
 
 
 # Application definition
@@ -130,3 +131,5 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'blog-home'
 LOGIN_URL = 'login'
+
+django_heroku.settings(locals())
